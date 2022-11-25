@@ -2,7 +2,7 @@ import React from 'react';
 import HomeIcon from './HomeIcon';
 import BookingIcon from './BookingIcon';
 import ProfileIcon from './ProfileIcon';
-import {MainBottomTabs} from '../../constants/routes';
+import {MainBottomTabs} from 'constants/routes';
 
 const TabIcons = ({name, color}: {name: string; color: string}) => {
   if (name === MainBottomTabs.Home) {

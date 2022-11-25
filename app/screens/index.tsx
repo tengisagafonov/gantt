@@ -8,6 +8,7 @@ import Home from './home';
 import Profile from './profile';
 import {MainBottomTabs} from 'app/constants/routes';
 import TabIcons from 'app/assets/icons/TabIcons';
+import {fontWeight} from 'config/Theme';
 
 export type RootStackParamList = {
   auth: undefined;
@@ -27,6 +28,7 @@ const BottomNavigator = () => (
   <Bottom.Navigator
     screenOptions={({route}) => ({
       headerShown: false,
+      tabBarLabelStyle: {fontWeight: fontWeight.bold},
       tabBarIcon: ({color}) => {
         return <TabIcons name={route.name} color={color} />;
       },

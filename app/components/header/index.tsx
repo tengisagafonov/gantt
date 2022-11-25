@@ -1,13 +1,8 @@
 import React from 'react';
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  SafeAreaView,
-  StyleSheet,
-} from 'react-native';
+import {View, TouchableOpacity, SafeAreaView, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Colors, fontSize, fontWeight, spacing} from 'app/config/Theme';
+import {Colors, spacing} from 'config/Theme';
+import {ChevronIcon} from 'assets/icons';
 
 const Header = () => {
   const navigation = useNavigation();
@@ -17,7 +12,7 @@ const Header = () => {
         <TouchableOpacity
           style={styles.back}
           onPress={() => navigation.goBack()}>
-          <Text style={styles.text}>{'<'}</Text>
+          <ChevronIcon />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -40,11 +35,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: spacing.huge,
     marginHorizontal: spacing.large,
-  },
-  text: {
-    color: Colors.border,
-    fontSize: fontSize.huge,
-    fontWeight: fontWeight.bold,
   },
   back: {
     position: 'absolute',

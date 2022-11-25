@@ -12,7 +12,15 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "app/*": ["app/*/index", "app/*"]
+      "app/*": ["app/*/index", "app/*"],
+      "assets/*" : ["app/assets/*/index" , "app/assets/*"],
+      "components/*" : ["app/components/*/index" , "components/*"],
+      "config/*" : ["app/config/*/index" , "app/config/*"],
+      "constants/*" : ["app/constants/*/index" , "app/constants/*"],
+      "screens/*" : ["app/screens/*/index" , "sreens/*"],
+      "store/*" : ["app/store/*/index" , "app/store/*"],
+      "types/*" : ["app/types/*/index" , "app/types/*"],
+      "utils/*" : ["app/utils/*/index" , "app/utils/*"]
     },
     "noEmit": true,
     "resolveJsonModule": true,

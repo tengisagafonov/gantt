@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Colors, spacing} from 'app/config/Theme';
 
 const Auth: FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
 
   return (
     <View style={styles.main}>
