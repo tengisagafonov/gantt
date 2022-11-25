@@ -44,9 +44,9 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderRightWidth: 1,
     borderTopRightRadius: 5,
-    borderColor: Colors.border,
+    borderColor: Colors.buttonInactive,
   },
-  promoText: {padding: spacing.tiny},
+  promoText: {padding: spacing.tiny, color: Colors.border},
   title: {fontWeight: fontWeight.bold},
   service: {
     marginVertical: spacing.tiny,
