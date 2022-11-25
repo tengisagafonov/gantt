@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {Colors} from '../../config/Colors';
 import {useNavigation} from '@react-navigation/native';
+import {Colors, spacing} from 'app/config/Theme';
 
 const Auth: FC = () => {
   const navigation = useNavigation();
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
   main: {flex: 1, alignItems: 'center', justifyContent: 'center'},
   button: {
     backgroundColor: Colors.buttonActiveBlue,
-    paddingVertical: 15,
-    paddingHorizontal: 25,
+    paddingVertical: spacing.large,
+    paddingHorizontal: spacing.huge,
     borderRadius: 5,
   },
   text: {color: Colors.white},

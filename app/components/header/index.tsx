@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Colors} from '../../config/Colors';
+import {Colors, spacing} from 'app/config/Theme';
 
 const Header = () => {
   const navigation = useNavigation();
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingBottom: 10,
+    paddingBottom: spacing.medium,
     borderBottomWidth: 2,
     borderColor: Colors.buttonInactive,
   },
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 26,
-    marginHorizontal: 16,
+    marginVertical: spacing.huge,
+    marginHorizontal: spacing.large,
   },
   text: {
     color: Colors.border,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
   back: {
     position: 'absolute',
-    left: 0,
+    left: spacing.none,
     backgroundColor: Colors.buttonInactive,
     alignItems: 'center',
     justifyContent: 'center',
