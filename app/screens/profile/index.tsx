@@ -5,7 +5,7 @@ import Header from 'app/components/header';
 const Profile = () => {
   return (
     <View style={StyleSheet.absoluteFill}>
-      <Header />
+      <Header title={'Profile'} />
       <View style={styles.main}>
         <Text>Home</Text>
       </View>

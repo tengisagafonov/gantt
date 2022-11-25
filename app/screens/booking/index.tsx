@@ -5,7 +5,7 @@ import Header from 'app/components/header';
 const Booking = () => {
   return (
     <View style={StyleSheet.absoluteFill}>
-      <Header />
+      <Header title={'Booking'} />
       <View style={styles.main}>
         <Text>Booking</Text>
       </View>

@@ -1,10 +1,16 @@
 import React from 'react';
-import {View, TouchableOpacity, SafeAreaView, StyleSheet} from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Colors, spacing} from 'config/Theme';
+import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {ChevronIcon} from 'assets/icons';
 
-const Header = () => {
+const Header = ({title}: {title: string}) => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.header}>
@@ -14,6 +20,7 @@ const Header = () => {
           onPress={() => navigation.goBack()}>
           <ChevronIcon />
         </TouchableOpacity>
+        <Text style={styles.title}>{title}</Text>
       </View>
     </SafeAreaView>
   );
@@ -27,6 +34,10 @@ const styles = StyleSheet.create({
     paddingBottom: spacing.medium,
     borderBottomWidth: 2,
     borderColor: Colors.buttonInactive,
+  },
+  title: {
+    fontSize: fontSize.large,
+    fontWeight: fontWeight.bold,
   },
   row: {
     flex: 1,
