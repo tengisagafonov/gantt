@@ -1,16 +1,18 @@
 import React from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import Header from 'app/components/header';
-import CategoryItem from './component/categoryItem';
+import Offers from './component/offers';
+import Services from './component/services';
 
 const Home = () => {
   return (
     <View style={StyleSheet.absoluteFill}>
       <Header title={'Home'} />
       <ScrollView style={styles.main}>
-        <CategoryItem item={{title: 'Our Best Services'}} />
-        <CategoryItem item={{title: 'Next Thing on Your Mind'}} />
-        <CategoryItem item={{title: 'Services'}} />
+        <Services />
+        <Offers item={{title: 'Our Best Services'}} />
+        <Offers item={{title: 'Next Thing on Your Mind'}} />
+        <Offers item={{title: 'Offers'}} />
       </ScrollView>
     </View>
   );

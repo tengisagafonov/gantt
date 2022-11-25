@@ -24,5 +24,7 @@ export const Colors = {
   white: '#fff',
   buttonInactive: '#EDEDED',
   buttonActiveBlue: '#005DAC',
+  start: '#C9C9C9',
   border: '#939393',
+  green: '#7dd87d',
 };

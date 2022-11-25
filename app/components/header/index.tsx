@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: Colors.white,
     paddingBottom: spacing.medium,
     borderBottomWidth: 2,
     borderColor: Colors.buttonInactive,
