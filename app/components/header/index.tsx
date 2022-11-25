@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Colors, spacing} from 'app/config/Theme';
+import {Colors, fontSize, fontWeight, spacing} from 'app/config/Theme';
 
 const Header = () => {
   const navigation = useNavigation();
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.border,
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: fontSize.huge,
+    fontWeight: fontWeight.bold,
   },
   back: {
     position: 'absolute',

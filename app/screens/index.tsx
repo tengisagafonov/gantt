@@ -6,8 +6,8 @@ import Auth from './auth';
 import Booking from './booking';
 import Home from './home';
 import Profile from './profile';
-import {MainBottomTabs} from '../constants/routes';
-import TabIcons from '../assets/icons/TabIcons';
+import {MainBottomTabs} from 'app/constants/routes';
+import TabIcons from 'app/assets/icons/TabIcons';
 
 export type RootStackParamList = {
   auth: undefined;

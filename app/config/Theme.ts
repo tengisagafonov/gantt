@@ -8,6 +8,18 @@ export enum spacing {
   massive = 48,
 }
 
+export enum fontSize {
+  small = 12,
+  medium = 14,
+  large = 16,
+  huge = 18,
+}
+
+export enum fontWeight {
+  medium = '500',
+  bold = '600',
+}
+
 export const Colors = {
   white: '#fff',
   buttonInactive: '#EDEDED',
