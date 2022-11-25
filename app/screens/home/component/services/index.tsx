@@ -81,7 +81,7 @@ const service = (isLast: boolean) =>
     backgroundColor: Colors.buttonActiveBlue,
     borderRadius: 4,
     width: '30%',
-    marginTop: spacing.tiny,
+    marginTop: spacing.medium,
     height: 60,
     marginRight: isLast ? 0 : '4.9%',
     alignItems: 'center',

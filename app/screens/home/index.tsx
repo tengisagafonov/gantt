@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <View style={StyleSheet.absoluteFill}>
       <Header title={'Home'} />
-      <ScrollView style={styles.main}>
+      <ScrollView style={styles.main} showsVerticalScrollIndicator={false}>
         <Services />
         <Offers item={{title: 'Our Best Services'}} />
         <Offers item={{title: 'Next Thing on Your Mind'}} />
