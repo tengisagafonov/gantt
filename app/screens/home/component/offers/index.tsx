@@ -24,7 +24,7 @@ const items = [
     src: 'https://climate.onep.go.th/wp-content/uploads/2020/01/default-image-600x338.png',
     service: 'Free Waxing',
     price: '69900',
-    promo: 'under 700',
+    promo: '-15 %',
   },
   {
     title: 'Car cleaning',

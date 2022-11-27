@@ -8,7 +8,7 @@ import Home from './home';
 import Profile from './profile';
 import {MainBottomTabs} from 'app/constants/routes';
 import TabIcons from 'app/assets/icons/TabIcons';
-import {fontWeight} from 'config/Theme';
+import {Colors, fontWeight} from 'config/Theme';
 import OffersList from 'app/screens/list';
 import ShopInfo from 'app/screens/shopInfo';
 
@@ -49,6 +49,7 @@ const BottomNavigator = () => (
   <Bottom.Navigator
     screenOptions={({route}) => ({
       headerShown: false,
+      tabBarItemStyle: {borderTopWidth: 2, borderColor: Colors.buttonInactive},
       tabBarLabelStyle: {fontWeight: fontWeight.bold},
       tabBarIcon: ({color}) => {
         return <TabIcons name={route.name} color={color} />;

@@ -28,6 +28,7 @@ function Shop({item, navigation}: {item: any; navigation: any}) {
           </TouchableOpacity>
           <Rating style={styles.icon} color={Colors.yellow} />
           <Text style={styles.text}>4.5</Text>
+          <Text> (50+)</Text>
         </View>
       </View>
       <View style={styles.chevron}>

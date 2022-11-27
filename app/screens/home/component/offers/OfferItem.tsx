@@ -18,7 +18,7 @@ export const OfferItem = ({item}: {item: any}) => {
       <Text style={styles.service}>{item.service}</Text>
       <Text>
         <Text style={styles.start}>starts at </Text>
-        <Text style={styles.price}>{priceSeparator(item.price)}₮</Text>
+        <Text style={styles.price}>{priceSeparator(item.price)}</Text>
       </Text>
     </View>
   );
@@ -38,15 +38,13 @@ const styles = StyleSheet.create({
   promo: {
     position: 'absolute',
     opacity: 0.8,
-    bottom: 0,
-    left: 0,
+    bottom: 2,
+    left: 5,
     backgroundColor: Colors.white,
-    borderTopWidth: 1,
-    borderRightWidth: 1,
     borderTopRightRadius: 5,
     borderColor: Colors.buttonInactive,
   },
-  promoText: {padding: spacing.tiny, color: Colors.border},
+  promoText: {padding: spacing.tiny},
   title: {fontWeight: fontWeight.bold},
   service: {
     marginVertical: spacing.tiny,
