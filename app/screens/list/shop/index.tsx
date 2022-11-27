@@ -4,9 +4,11 @@ import FastImage from 'react-native-fast-image';
 import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {ChevronIcon, LocationIcon, MedalIcon, Rating} from 'assets/icons';
 
-const Shop = ({item}: {item: any}) => {
+function Shop({item, navigation}: {item: any; navigation: any}) {
   return (
-    <TouchableOpacity style={styles.main}>
+    <TouchableOpacity
+      style={styles.main}
+      onPress={() => navigation.navigate('Shop', {title: item.name})}>
       {item?.isCertified && <MedalIcon style={styles.badge} />}
       <FastImage
         style={styles.logo}
@@ -15,13 +17,15 @@ const Shop = ({item}: {item: any}) => {
         }}
       />
       <View>
-        <Text style={styles.title}> Ant Control</Text>
+        <Text style={styles.title}> {item?.name}</Text>
         <View style={[styles.row, styles.gap]}>
-          <Text> E-Sport</Text>
+          <Text> E-Sports</Text>
         </View>
         <View style={styles.row}>
           <LocationIcon style={styles.icon} color={Colors.red} />
-          <Text style={[styles.text, styles.location]}> Bayngol dureg </Text>
+          <TouchableOpacity>
+            <Text style={[styles.text, styles.location]}> Bayngol dureg </Text>
+          </TouchableOpacity>
           <Rating style={styles.icon} color={Colors.yellow} />
           <Text style={styles.text}>4.5</Text>
         </View>
@@ -31,7 +35,7 @@ const Shop = ({item}: {item: any}) => {
       </View>
     </TouchableOpacity>
   );
-};
+}
 
 const styles = StyleSheet.create({
   main: {

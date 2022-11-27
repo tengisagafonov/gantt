@@ -10,6 +10,7 @@ import {MainBottomTabs} from 'app/constants/routes';
 import TabIcons from 'app/assets/icons/TabIcons';
 import {fontWeight} from 'config/Theme';
 import OffersList from 'app/screens/list';
+import ShopInfo from 'app/screens/shopInfo';
 
 export type RootStackParamList = {
   auth: undefined;
@@ -19,6 +20,7 @@ export type RootStackParamList = {
 export type HomeStackList = {
   Home: undefined;
   List: {title: string};
+  Shop: {title: string};
 };
 
 export type BottomParamList = {
@@ -39,6 +41,7 @@ const HomeNavigator = () => (
     }}>
     <HomeStack.Screen name={'HomeRoot'} component={Home} />
     <HomeStack.Screen name={'List'} component={OffersList} />
+    <HomeStack.Screen name={'Shop'} component={ShopInfo} />
   </HomeStack.Navigator>
 );
 
