@@ -18,12 +18,14 @@ export enum fontSize {
 export enum fontWeight {
   medium = '500',
   bold = '600',
+  thick = '800',
 }
 
 export const Colors = {
   white: '#fff',
   buttonInactive: '#EDEDED',
   buttonActiveBlue: '#005DAC',
+  lightBlue: '#7EAECF',
   start: '#C9C9C9',
   border: '#939393',
   red: '#C95858',

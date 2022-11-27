@@ -4,6 +4,14 @@ import Header from 'app/components/header';
 import {Colors} from 'config/Theme';
 import BookingMenu from 'app/screens/booking/components/menu';
 import BookingItem from 'app/screens/booking/components/bookingItem';
+import {Status} from 'app/types';
+
+const data = [
+  {id: 1, status: Status.submitted},
+  {id: 2, status: Status.accepted},
+  {id: 3, status: Status.cancelled},
+  {id: 4, status: Status.ongoing},
+];
 
 const Booking = () => {
   return (
@@ -12,8 +20,8 @@ const Booking = () => {
       <View style={styles.main}>
         <BookingMenu />
         <FlatList
-          data={[{id: 1}, {id: 2}]}
-          renderItem={() => <BookingItem />}
+          data={data}
+          renderItem={({item}) => <BookingItem item={item} />}
         />
       </View>
     </View>

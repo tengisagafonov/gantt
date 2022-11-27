@@ -7,6 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
+import {Labels} from 'constants/labels';
 
 const BookingMenu = () => {
   const [s, setS] = useState<number>(0);
@@ -14,13 +15,13 @@ const BookingMenu = () => {
   return (
     <View style={styles.menu}>
       <TouchableOpacity onPress={() => setS(0)} style={menuItem(s === 0)}>
-        <Text style={styles.text}>Active</Text>
+        <Text style={styles.text}>{Labels.Active}</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setS(1)} style={menuItem(s === 1)}>
-        <Text style={styles.text}>Success</Text>
+        <Text style={styles.text}>{Labels.Success}</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setS(2)} style={menuItem(s === 2)}>
-        <Text style={styles.text}>Cancelled</Text>
+        <Text style={styles.text}>{Labels.Cancelled}</Text>
       </TouchableOpacity>
     </View>
   );
