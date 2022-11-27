@@ -26,5 +26,7 @@ export const Colors = {
   buttonActiveBlue: '#005DAC',
   start: '#C9C9C9',
   border: '#939393',
+  red: '#C95858',
   green: '#7dd87d',
+  yellow: '#FFBF00',
 };

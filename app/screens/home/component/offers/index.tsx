@@ -9,6 +9,7 @@ import {
 import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {ChevronDoubleIcon} from 'assets/icons';
 import {OfferItem} from './OfferItem';
+import {useNavigation} from '@react-navigation/native';
 
 const items = [
   {
@@ -49,11 +50,15 @@ const items = [
 ];
 
 const Offers = ({item}: {item: any}) => {
+  const navigation = useNavigation<any>();
+
   return (
     <View style={styles.main}>
       <View style={styles.header}>
         <Text style={styles.title}>{item.title}</Text>
-        <TouchableOpacity style={styles.viewAll}>
+        <TouchableOpacity
+          style={styles.viewAll}
+          onPress={() => navigation.navigate('List', {title: item.title})}>
           <Text style={styles.view}>View all</Text>
           <ChevronDoubleIcon color={Colors.buttonActiveBlue} />
         </TouchableOpacity>

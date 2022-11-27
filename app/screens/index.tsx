@@ -9,20 +9,38 @@ import Profile from './profile';
 import {MainBottomTabs} from 'app/constants/routes';
 import TabIcons from 'app/assets/icons/TabIcons';
 import {fontWeight} from 'config/Theme';
+import OffersList from 'app/screens/list';
 
 export type RootStackParamList = {
   auth: undefined;
   bottomNavigation: BottomParamList;
 };
 
-export type BottomParamList = {
+export type HomeStackList = {
   Home: undefined;
+  List: {title: string};
+};
+
+export type BottomParamList = {
+  Home: HomeStackList;
   Booking: undefined;
   Profile: undefined;
 };
 
+const HomeStack = createStackNavigator();
+
 const Stack = createStackNavigator<RootStackParamList>();
 const Bottom = createBottomTabNavigator<BottomParamList>();
+
+const HomeNavigator = () => (
+  <HomeStack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}>
+    <HomeStack.Screen name={'HomeRoot'} component={Home} />
+    <HomeStack.Screen name={'List'} component={OffersList} />
+  </HomeStack.Navigator>
+);
 
 const BottomNavigator = () => (
   <Bottom.Navigator
@@ -33,7 +51,7 @@ const BottomNavigator = () => (
         return <TabIcons name={route.name} color={color} />;
       },
     })}>
-    <Bottom.Screen name={MainBottomTabs.Home} component={Home} />
+    <Bottom.Screen name={MainBottomTabs.Home} component={HomeNavigator} />
     <Bottom.Screen name={MainBottomTabs.Booking} component={Booking} />
     <Bottom.Screen name={MainBottomTabs.Profile} component={Profile} />
   </Bottom.Navigator>

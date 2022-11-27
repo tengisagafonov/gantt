@@ -25,7 +25,7 @@ const Services = () => {
       </View>
       <View style={styles.block}>
         {services.map((i, idx) => (
-          <TouchableOpacity style={service((idx + 1) % 3 === 0)}>
+          <TouchableOpacity key={idx} style={service((idx + 1) % 3 === 0)}>
             <Text style={styles.text}>{i}</Text>
           </TouchableOpacity>
         ))}
