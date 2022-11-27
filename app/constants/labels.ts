@@ -3,4 +3,5 @@ export const Labels = {
   Success: 'Success',
   Cancelled: 'Cancelled',
   'Cancel booking': 'Cancel booking',
+  'Edit Profile': 'Edit Profile',
 };
