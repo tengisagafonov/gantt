@@ -7,6 +7,7 @@ import {Colors} from 'config/Theme';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
 import {ProfileStackList} from 'app/screens';
+import {Labels} from 'constants/labels';
 
 const Profile = () => {
   const navigation =
@@ -17,9 +18,26 @@ const Profile = () => {
       <ScrollView style={styles.main}>
         <ProfileHeader navigate={() => navigation.navigate('ProfileEdit')} />
         <ProfileItem title={'Register as a Partner'} />
-        <ProfileItem title={'Share'} />
-        <ProfileItem title={'FAQ'} />
-        <ProfileItem title={'Privacy Policy'} />
+        <ProfileItem
+          title={Labels.Share}
+          onPress={() =>
+            navigation.navigate('ProfileDetails', {title: Labels.Share})
+          }
+        />
+        <ProfileItem
+          title={Labels.FAQ}
+          onPress={() =>
+            navigation.navigate('ProfileDetails', {title: Labels.Share})
+          }
+        />
+        <ProfileItem
+          title={Labels['Privacy Policy']}
+          onPress={() =>
+            navigation.navigate('ProfileDetails', {
+              title: Labels['Privacy Policy'],
+            })
+          }
+        />
         <ProfileItem title={'Logout'} />
       </ScrollView>
     </View>

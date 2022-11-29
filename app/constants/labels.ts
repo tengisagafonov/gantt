@@ -3,10 +3,13 @@ export const Labels = {
   Success: 'Success',
   Cancelled: 'Cancelled',
   Save: 'Save',
+  Share: 'Share',
+  FAQ: 'FAQ',
   'Cancel booking': 'Cancel booking',
   'Edit Profile': 'Edit Profile',
   'Cancellation Policy': 'Cancellation Policy',
   'Give Feedback': 'Give Feedback',
+  'Privacy Policy': 'Privacy Policy',
 };
 
 export const GeneralInfo = {

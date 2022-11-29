@@ -14,6 +14,7 @@ import Booking from './booking';
 import Home from './home';
 import Profile from './profile';
 import EditProfile from './editProfile';
+import ProfileDetails from 'app/screens/profileDetails';
 
 export type RootStackParamList = {
   auth: undefined;
@@ -34,6 +35,7 @@ export type BookingStackList = {
 export type ProfileStackList = {
   ProfileRoot: undefined;
   ProfileEdit: undefined;
+  ProfileDetails: {title: string};
 };
 
 export type BottomParamList = {
@@ -55,6 +57,7 @@ const ProfileNavigator = () => (
     }}>
     <ProfileStack.Screen name={'ProfileRoot'} component={Profile} />
     <ProfileStack.Screen name={'ProfileEdit'} component={EditProfile} />
+    <ProfileStack.Screen name={'ProfileDetails'} component={ProfileDetails} />
   </ProfileStack.Navigator>
 );
 
