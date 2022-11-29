@@ -6,5 +6,5 @@ export const StatusColor = {
   submitted: Colors.green,
   ongoing: Colors.yellow,
   cancelled: Colors.red,
-  completed: Colors.border,
+  completed: Colors.purple,
 } as BookingsColorType;

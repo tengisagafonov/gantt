@@ -10,6 +10,7 @@ import Header from 'app/components/header';
 import {RouteProp} from '@react-navigation/native';
 import Topic from './components/topic';
 import {spacing, Colors, fontSize, fontWeight} from 'config/Theme';
+import {Status} from 'app/types';
 
 const orderProfile = {
   service: {title: 'haircut', price: '50000'},
@@ -22,15 +23,15 @@ const orderProfile = {
 const BookingInfo = ({
   route,
 }: {
-  route: RouteProp<{params: {title: string}}, 'params'>;
+  route: RouteProp<{params: {title: string; status: Status}}, 'params'>;
 }) => {
-  const {title} = route.params;
+  const {title, status} = route.params;
 
   return (
     <View style={styles.main}>
       <Header title={title} phone={orderProfile.phone} />
       <ScrollView>
-        <Topic orderProfile={orderProfile} />
+        <Topic orderProfile={orderProfile} stat={status} />
       </ScrollView>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.text}>Cancel Booking</Text>

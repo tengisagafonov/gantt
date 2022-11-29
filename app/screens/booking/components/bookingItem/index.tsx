@@ -22,7 +22,12 @@ const BookingItem = ({item}: {item: BookingItemType}) => {
   return (
     <TouchableOpacity
       style={styles.general}
-      onPress={() => navigation.navigate('BookingInfo', {title: '#5234587'})}>
+      onPress={() =>
+        navigation.navigate('BookingInfo', {
+          title: '#5234587',
+          status: item.status,
+        })
+      }>
       <View style={styles.main}>
         <View>
           <Text style={styles.code}>#5234587</Text>
@@ -49,11 +54,13 @@ const BookingItem = ({item}: {item: BookingItemType}) => {
         </View>
         <FastImage source={{uri: ''}} style={styles.img} />
       </View>
-      {item.status !== Status.cancelled && item.status !== Status.ongoing && (
-        <TouchableOpacity style={styles.cancel}>
-          <Text style={styles.cancelText}>{Labels['Cancel booking']} </Text>
-        </TouchableOpacity>
-      )}
+      {item.status !== Status.cancelled &&
+        item.status !== Status.ongoing &&
+        item.status !== Status.completed && (
+          <TouchableOpacity style={styles.cancel}>
+            <Text style={styles.cancelText}>{Labels['Cancel booking']} </Text>
+          </TouchableOpacity>
+        )}
     </TouchableOpacity>
   );
 };

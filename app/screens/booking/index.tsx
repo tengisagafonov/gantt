@@ -11,6 +11,7 @@ const data = [
   {id: 2, status: Status.accepted},
   {id: 3, status: Status.cancelled},
   {id: 4, status: Status.ongoing},
+  {id: 5, status: Status.completed},
 ];
 
 const Booking = () => {

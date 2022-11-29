@@ -12,6 +12,7 @@ import {Colors, fontWeight} from 'config/Theme';
 import OffersList from 'app/screens/list';
 import ShopInfo from 'app/screens/shopInfo';
 import BookingInfo from 'app/screens/bookingInfo';
+import {Status} from 'app/types';
 
 export type RootStackParamList = {
   auth: undefined;
@@ -26,7 +27,7 @@ export type HomeStackList = {
 
 export type BookingStackList = {
   BookingRoot: undefined;
-  BookingInfo: {title: string};
+  BookingInfo: {title: string; status: Status};
 };
 
 export type BottomParamList = {

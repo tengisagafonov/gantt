@@ -7,7 +7,7 @@ import {GeneralInfo, Labels} from 'constants/labels';
 import React from 'react';
 import {styles, statusText, status} from './styles';
 
-const Topic = ({orderProfile}: {orderProfile: any}) => {
+const Topic = ({orderProfile, stat}: {orderProfile: any; stat: Status}) => {
   return (
     <View style={styles.profile}>
       <View style={styles.services}>
@@ -27,10 +27,8 @@ const Topic = ({orderProfile}: {orderProfile: any}) => {
             <Text style={styles.code}>{orderProfile.location}</Text>
           </TouchableOpacity>
         </View>
-        <View style={status(Status.accepted)}>
-          <Text style={statusText(Status.accepted)}>
-            {capitalizeFirstLetter(Status.accepted)}
-          </Text>
+        <View style={status(stat)}>
+          <Text style={statusText(stat)}>{capitalizeFirstLetter(stat)}</Text>
         </View>
       </View>
       <View style={styles.cancellation}>
