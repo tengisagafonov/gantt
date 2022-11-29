@@ -5,6 +5,7 @@ export const Labels = {
   'Cancel booking': 'Cancel booking',
   'Edit Profile': 'Edit Profile',
   'Cancellation Policy': 'Cancellation Policy',
+  'Give Feedback': 'Give Feedback',
 };
 
 export const GeneralInfo = {

@@ -11,6 +11,8 @@ import {RouteProp} from '@react-navigation/native';
 import Topic from './components/topic';
 import {spacing, Colors, fontSize, fontWeight} from 'config/Theme';
 import {BookingStackList} from 'app/screens';
+import {getTitle} from 'utils/booking';
+import {Status} from 'app/types';
 
 const orderProfile = {
   service: {title: 'haircut', price: '50000'},
@@ -33,9 +35,11 @@ const BookingInfo = ({
       <ScrollView>
         <Topic orderProfile={orderProfile} bookingStatus={status} />
       </ScrollView>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.text}>Cancel Booking</Text>
-      </TouchableOpacity>
+      {status !== Status.cancelled && status !== Status.ongoing && (
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.text}>{getTitle(status)}</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -48,11 +52,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 8,
     padding: spacing.medium,
-    backgroundColor: Colors.buttonActiveBlue,
+    borderWidth: 1,
+    borderColor: Colors.buttonActiveBlue,
     marginBottom: spacing.medium,
   },
   text: {
-    color: Colors.white,
+    color: Colors.buttonActiveBlue,
     fontSize: fontSize.large,
     fontWeight: fontWeight.medium,
   },
