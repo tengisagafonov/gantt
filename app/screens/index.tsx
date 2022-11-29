@@ -11,6 +11,7 @@ import TabIcons from 'app/assets/icons/TabIcons';
 import {Colors, fontWeight} from 'config/Theme';
 import OffersList from 'app/screens/list';
 import ShopInfo from 'app/screens/shopInfo';
+import BookingInfo from 'app/screens/bookingInfo';
 
 export type RootStackParamList = {
   auth: undefined;
@@ -23,16 +24,32 @@ export type HomeStackList = {
   Shop: {title: string};
 };
 
+export type BookingStackList = {
+  BookingRoot: undefined;
+  BookingInfo: {title: string};
+};
+
 export type BottomParamList = {
   Home: HomeStackList;
-  Booking: undefined;
+  Booking: BookingStackList;
   Profile: undefined;
 };
 
 const HomeStack = createStackNavigator();
 
 const Stack = createStackNavigator<RootStackParamList>();
+const BookingStack = createStackNavigator<BookingStackList>();
 const Bottom = createBottomTabNavigator<BottomParamList>();
+
+const BookingNavigator = () => (
+  <BookingStack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}>
+    <BookingStack.Screen name={'BookingRoot'} component={Booking} />
+    <BookingStack.Screen name={'BookingInfo'} component={BookingInfo} />
+  </BookingStack.Navigator>
+);
 
 const HomeNavigator = () => (
   <HomeStack.Navigator
@@ -56,7 +73,7 @@ const BottomNavigator = () => (
       },
     })}>
     <Bottom.Screen name={MainBottomTabs.Home} component={HomeNavigator} />
-    <Bottom.Screen name={MainBottomTabs.Booking} component={Booking} />
+    <Bottom.Screen name={MainBottomTabs.Booking} component={BookingNavigator} />
     <Bottom.Screen name={MainBottomTabs.Profile} component={Profile} />
   </Bottom.Navigator>
 );

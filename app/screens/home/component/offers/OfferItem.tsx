@@ -3,8 +3,9 @@ import {View, Text, StyleSheet} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {Colors, fontWeight, spacing} from 'config/Theme';
 import {priceSeparator} from 'utils/items';
+import {OfferItemType} from 'app/types';
 
-export const OfferItem = ({item}: {item: any}) => {
+export const OfferItem = ({item}: {item: OfferItemType}) => {
   return (
     <View style={styles.main}>
       <FastImage source={{uri: item.src}} style={styles.img}>

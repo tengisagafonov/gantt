@@ -8,3 +8,7 @@ export const enum Status {
 export type BookingsColorType = {
   [key in Status]: string;
 };
+
+export type BookingItemType = {
+  status: Status;
+};

@@ -14,10 +14,15 @@ import {Status} from 'app/types';
 import {Labels} from 'constants/labels';
 import {Rating} from 'assets/icons';
 import FastImage from 'react-native-fast-image';
+import {useNavigation} from '@react-navigation/native';
+import {BookingItemType} from 'app/types';
 
-const BookingItem = ({item}: {item: any}) => {
+const BookingItem = ({item}: {item: BookingItemType}) => {
+  const navigation = useNavigation<any>();
   return (
-    <View style={styles.general}>
+    <TouchableOpacity
+      style={styles.general}
+      onPress={() => navigation.navigate('BookingInfo', {title: '#5234587'})}>
       <View style={styles.main}>
         <View>
           <Text style={styles.code}>#5234587</Text>
@@ -49,7 +54,7 @@ const BookingItem = ({item}: {item: any}) => {
           <Text style={styles.cancelText}>{Labels['Cancel booking']} </Text>
         </TouchableOpacity>
       )}
-    </View>
+    </TouchableOpacity>
   );
 };
 

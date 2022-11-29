@@ -10,6 +10,7 @@ import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {ChevronDoubleIcon} from 'assets/icons';
 import {OfferItem} from './OfferItem';
 import {useNavigation} from '@react-navigation/native';
+import {OfferItemType} from 'app/types';
 
 const items = [
   {
@@ -49,7 +50,7 @@ const items = [
   },
 ];
 
-const Offers = ({item}: {item: any}) => {
+const Offers = ({item}: {item: OfferItemType}) => {
   const navigation = useNavigation<any>();
 
   return (
