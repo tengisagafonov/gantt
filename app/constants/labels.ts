@@ -4,4 +4,10 @@ export const Labels = {
   Cancelled: 'Cancelled',
   'Cancel booking': 'Cancel booking',
   'Edit Profile': 'Edit Profile',
+  'Cancellation Policy': 'Cancellation Policy',
+};
+
+export const GeneralInfo = {
+  'Cancellation Policy':
+    'if you cancel less than 24 hours before your booking, you may be charged a cancellation fee up to the full amount of the services booked.',
 };

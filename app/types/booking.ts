@@ -3,6 +3,7 @@ export const enum Status {
   submitted = 'submitted',
   ongoing = 'ongoing',
   cancelled = 'cancelled',
+  completed = 'completed',
 }
 
 export type BookingsColorType = {
