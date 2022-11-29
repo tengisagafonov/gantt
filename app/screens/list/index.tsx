@@ -16,11 +16,7 @@ const data = [
   {id: '7', name: 'Shangrila', isCertified: false},
 ];
 
-const OffersList = ({
-  route,
-}: {
-  route: RouteProp<{params: {title: string}}, 'params'>;
-}) => {
+const OffersList = ({route}: {route: RouteProp<HomeStackList, 'List'>}) => {
   const navigation = useNavigation<NativeStackNavigationProp<HomeStackList>>();
 
   const renderItem = useCallback(

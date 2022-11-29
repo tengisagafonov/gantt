@@ -20,7 +20,7 @@ export type RootStackParamList = {
 };
 
 export type HomeStackList = {
-  Home: undefined;
+  HomeRoot: undefined;
   List: {title: string};
   Shop: {title: string};
 };
@@ -36,9 +36,8 @@ export type BottomParamList = {
   Profile: undefined;
 };
 
-const HomeStack = createStackNavigator();
-
 const Stack = createStackNavigator<RootStackParamList>();
+const HomeStack = createStackNavigator<HomeStackList>();
 const BookingStack = createStackNavigator<BookingStackList>();
 const Bottom = createBottomTabNavigator<BottomParamList>();
 

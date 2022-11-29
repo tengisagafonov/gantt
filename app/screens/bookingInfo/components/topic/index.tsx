@@ -7,7 +7,13 @@ import {GeneralInfo, Labels} from 'constants/labels';
 import React from 'react';
 import {styles, statusText, status} from './styles';
 
-const Topic = ({orderProfile, stat}: {orderProfile: any; stat: Status}) => {
+const Topic = ({
+  orderProfile,
+  bookingStatus,
+}: {
+  orderProfile: any;
+  bookingStatus: Status;
+}) => {
   return (
     <View style={styles.profile}>
       <View style={styles.services}>
@@ -27,16 +33,22 @@ const Topic = ({orderProfile, stat}: {orderProfile: any; stat: Status}) => {
             <Text style={styles.code}>{orderProfile.location}</Text>
           </TouchableOpacity>
         </View>
-        <View style={status(stat)}>
-          <Text style={statusText(stat)}>{capitalizeFirstLetter(stat)}</Text>
+        <View style={status(bookingStatus)}>
+          <Text style={statusText(bookingStatus)}>
+            {capitalizeFirstLetter(bookingStatus)}
+          </Text>
         </View>
       </View>
-      <View style={styles.cancellation}>
-        <Text style={styles.name}>{Labels['Cancellation Policy']}</Text>
-        <Text style={styles.cancellationText}>
-          {GeneralInfo['Cancellation Policy']}
-        </Text>
-      </View>
+      {bookingStatus !== Status.cancelled &&
+        bookingStatus !== Status.completed &&
+        bookingStatus !== Status.ongoing && (
+          <View style={styles.cancellation}>
+            <Text style={styles.name}>{Labels['Cancellation Policy']}</Text>
+            <Text style={styles.cancellationText}>
+              {GeneralInfo['Cancellation Policy']}
+            </Text>
+          </View>
+        )}
     </View>
   );
 };
