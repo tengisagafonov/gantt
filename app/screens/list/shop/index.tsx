@@ -6,6 +6,7 @@ import {ChevronIcon, LocationIcon, MedalIcon, Rating} from 'assets/icons';
 import {OfferItemType} from 'app/types';
 import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
 import {HomeStackList} from 'app/screens';
+import {opacityColor} from 'utils/items';
 
 function Shop({
   item,
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
     height: 24,
     borderRadius: 12,
     transform: [{rotate: '180deg'}],
-    backgroundColor: Colors.border,
+    backgroundColor: opacityColor(Colors.border, 0.5),
   },
 });
 

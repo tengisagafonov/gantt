@@ -8,9 +8,10 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
-import {ChevronIcon} from 'assets/icons';
+import {CallIcon, ChevronIcon} from 'assets/icons';
+import {opacityColor} from 'utils/items';
 
-const Header = ({title}: {title: string}) => {
+const Header = ({title, phone}: {title: string; phone?: string}) => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.header}>
@@ -21,6 +22,11 @@ const Header = ({title}: {title: string}) => {
           <ChevronIcon />
         </TouchableOpacity>
         <Text style={styles.title}>{title}</Text>
+        {phone && (
+          <TouchableOpacity style={styles.phone}>
+            <CallIcon />
+          </TouchableOpacity>
+        )}
       </View>
     </SafeAreaView>
   );
@@ -52,6 +58,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: spacing.none,
     backgroundColor: Colors.buttonInactive,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+  },
+  phone: {
+    position: 'absolute',
+    right: spacing.none,
+    backgroundColor: opacityColor(Colors.green, 0.2),
     alignItems: 'center',
     justifyContent: 'center',
     width: 40,

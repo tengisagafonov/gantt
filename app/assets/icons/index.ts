@@ -6,6 +6,7 @@ import ChevronDoubleIcon from 'assets/icons/ChevronDoubleIcon';
 import LocationIcon from 'assets/icons/LocationIcon';
 import Rating from 'assets/icons/Rating';
 import MedalIcon from 'assets/icons/MedalIcon';
+import CallIcon from 'assets/icons/CallIcon';
 
 export {
   ProfileIcon,
@@ -16,4 +17,5 @@ export {
   LocationIcon,
   Rating,
   MedalIcon,
+  CallIcon,
 };
