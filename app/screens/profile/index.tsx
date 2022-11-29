@@ -27,7 +27,7 @@ const Profile = () => {
         <ProfileItem
           title={Labels.FAQ}
           onPress={() =>
-            navigation.navigate('ProfileDetails', {title: Labels.Share})
+            navigation.navigate('ProfileDetails', {title: Labels.FAQ})
           }
         />
         <ProfileItem
