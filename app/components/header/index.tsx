@@ -11,7 +11,7 @@ import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {CallIcon, ChevronIcon} from 'assets/icons';
 import {opacityColor} from 'utils/items';
 
-const Header = ({title, phone}: {title: string; phone?: string}) => {
+const Header = ({title = '', phone}: {title?: string; phone?: string}) => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.header}>

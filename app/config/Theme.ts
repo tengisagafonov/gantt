@@ -1,3 +1,5 @@
+import {Dimensions} from 'react-native';
+
 export enum spacing {
   none = 0,
   tiny = 4,
@@ -23,6 +25,7 @@ export enum fontWeight {
 
 export const Colors = {
   white: '#fff',
+  black: '#000',
   buttonInactive: '#EDEDED',
   buttonActiveBlue: '#005DAC',
   lightBlue: '#7EAECF',
@@ -34,3 +37,5 @@ export const Colors = {
   yellow: '#FFBF00',
   purple: '#B02997',
 };
+
+export const screenWidth = Dimensions.get('screen').width;

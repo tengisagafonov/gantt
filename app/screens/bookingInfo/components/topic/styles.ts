@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     marginTop: spacing.medium,
   },
   cancellationText: {color: Colors.border, marginTop: spacing.tiny},
-  icon: {transform: [{scale: 0.8}, {translateY: 4}], marginRight: spacing.tiny},
+  icon: {transform: [{scale: 0.8}], marginRight: spacing.tiny},
   profile: {
     backgroundColor: Colors.white,
     margin: spacing.smaller,
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
   location: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     borderColor: Colors.buttonActiveBlue,
   },
   name: {

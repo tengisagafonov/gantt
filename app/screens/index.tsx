@@ -2,10 +2,6 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Auth from './auth';
-import Booking from './booking';
-import Home from './home';
-import Profile from './profile';
 import {MainBottomTabs} from 'app/constants/routes';
 import TabIcons from 'app/assets/icons/TabIcons';
 import {Colors, fontWeight} from 'config/Theme';
@@ -13,6 +9,11 @@ import OffersList from 'app/screens/list';
 import ShopInfo from 'app/screens/shopInfo';
 import BookingInfo from 'app/screens/bookingInfo';
 import {Status} from 'app/types';
+import Auth from './auth';
+import Booking from './booking';
+import Home from './home';
+import Profile from './profile';
+import EditProfile from './editProfile';
 
 export type RootStackParamList = {
   auth: undefined;
@@ -30,16 +31,32 @@ export type BookingStackList = {
   BookingInfo: {title: string; status: Status};
 };
 
+export type ProfileStackList = {
+  ProfileRoot: undefined;
+  ProfileEdit: undefined;
+};
+
 export type BottomParamList = {
   Home: HomeStackList;
   Booking: BookingStackList;
-  Profile: undefined;
+  Profile: ProfileStackList;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
 const HomeStack = createStackNavigator<HomeStackList>();
 const BookingStack = createStackNavigator<BookingStackList>();
+const ProfileStack = createStackNavigator<ProfileStackList>();
 const Bottom = createBottomTabNavigator<BottomParamList>();
+
+const ProfileNavigator = () => (
+  <ProfileStack.Navigator
+    screenOptions={{
+      headerShown: false,
+    }}>
+    <ProfileStack.Screen name={'ProfileRoot'} component={Profile} />
+    <ProfileStack.Screen name={'ProfileEdit'} component={EditProfile} />
+  </ProfileStack.Navigator>
+);
 
 const BookingNavigator = () => (
   <BookingStack.Navigator
@@ -74,7 +91,7 @@ const BottomNavigator = () => (
     })}>
     <Bottom.Screen name={MainBottomTabs.Home} component={HomeNavigator} />
     <Bottom.Screen name={MainBottomTabs.Booking} component={BookingNavigator} />
-    <Bottom.Screen name={MainBottomTabs.Profile} component={Profile} />
+    <Bottom.Screen name={MainBottomTabs.Profile} component={ProfileNavigator} />
   </Bottom.Navigator>
 );
 

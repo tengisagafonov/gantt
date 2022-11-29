@@ -3,9 +3,15 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {spacing, Colors, fontWeight, fontSize} from 'config/Theme';
 import {ChevronIcon} from 'assets/icons';
 
-const ProfileItem = ({title}: {title: string}) => {
+const ProfileItem = ({
+  title,
+  onPress = () => null,
+}: {
+  title: string;
+  onPress?: () => void;
+}) => {
   return (
-    <TouchableOpacity style={styles.main}>
+    <TouchableOpacity style={styles.main} onPress={onPress}>
       <View style={styles.row}>
         <View style={styles.circle} />
         <Text style={styles.title}>{title}</Text>

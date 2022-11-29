@@ -4,13 +4,13 @@ import FastImage from 'react-native-fast-image';
 import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {Labels} from 'constants/labels';
 
-const ProfileHeader = () => {
+const ProfileHeader = ({navigate}: {navigate: () => void}) => {
   return (
     <View style={styles.main}>
       <FastImage style={styles.img} source={{uri: ''}} />
       <Text style={styles.title}>Albert Einstein</Text>
       <Text style={styles.email}>alberteinstein@gmail.com</Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={navigate}>
         <Text style={styles.label}>{Labels['Edit Profile']}</Text>
       </TouchableOpacity>
     </View>

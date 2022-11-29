@@ -7,6 +7,7 @@ import LocationIcon from 'assets/icons/LocationIcon';
 import Rating from 'assets/icons/Rating';
 import MedalIcon from 'assets/icons/MedalIcon';
 import CallIcon from 'assets/icons/CallIcon';
+import AddPhoto from 'assets/icons/AddPhoto';
 
 export {
   ProfileIcon,
@@ -18,4 +19,5 @@ export {
   Rating,
   MedalIcon,
   CallIcon,
+  AddPhoto,
 };
