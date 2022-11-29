@@ -2,7 +2,9 @@ import React, {useCallback} from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import Header from 'app/components/header';
 import Shop from './shop';
-import {useNavigation} from '@react-navigation/native';
+import {RouteProp, useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
+import {HomeStackList} from 'app/screens';
 
 const data = [
   {id: '1', name: 'Mega', isCertified: false},
@@ -14,8 +16,12 @@ const data = [
   {id: '7', name: 'Shangrila', isCertified: false},
 ];
 
-const OffersList = ({route}: {route: any}) => {
-  const navigation = useNavigation<any>();
+const OffersList = ({
+  route,
+}: {
+  route: RouteProp<{params: {title: string}}, 'params'>;
+}) => {
+  const navigation = useNavigation<NativeStackNavigationProp<HomeStackList>>();
 
   const renderItem = useCallback(
     ({item}: {item: any}) => <Shop item={item} navigation={navigation} />,

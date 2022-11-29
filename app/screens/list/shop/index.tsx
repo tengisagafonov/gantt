@@ -3,8 +3,17 @@ import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {ChevronIcon, LocationIcon, MedalIcon, Rating} from 'assets/icons';
+import {OfferItemType} from 'app/types';
+import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
+import {HomeStackList} from 'app/screens';
 
-function Shop({item, navigation}: {item: any; navigation: any}) {
+function Shop({
+  item,
+  navigation,
+}: {
+  item: OfferItemType;
+  navigation: NativeStackNavigationProp<HomeStackList>;
+}) {
   return (
     <TouchableOpacity
       style={styles.main}

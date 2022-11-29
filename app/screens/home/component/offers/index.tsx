@@ -11,6 +11,8 @@ import {ChevronDoubleIcon} from 'assets/icons';
 import {OfferItem} from './OfferItem';
 import {useNavigation} from '@react-navigation/native';
 import {OfferItemType} from 'app/types';
+import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
+import {HomeStackList} from 'app/screens';
 
 const items = [
   {
@@ -51,7 +53,7 @@ const items = [
 ];
 
 const Offers = ({item}: {item: OfferItemType}) => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<NativeStackNavigationProp<HomeStackList>>();
 
   return (
     <View style={styles.main}>
