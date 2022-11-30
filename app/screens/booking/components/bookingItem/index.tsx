@@ -16,9 +16,17 @@ import {Rating} from 'assets/icons';
 import FastImage from 'react-native-fast-image';
 import {useNavigation} from '@react-navigation/native';
 import {BookingItemType} from 'app/types';
+import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
+import {BookingStackList} from 'app/screens';
 
-const BookingItem = ({item}: {item: BookingItemType}) => {
-  const navigation = useNavigation<any>();
+interface IBookingItemProps {
+  item: BookingItemType;
+}
+
+const BookingItem = (props: IBookingItemProps) => {
+  const {item} = props;
+  const navigation =
+    useNavigation<NativeStackNavigationProp<BookingStackList>>();
   return (
     <TouchableOpacity
       style={styles.general}

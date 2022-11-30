@@ -8,13 +8,13 @@ import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
 import {HomeStackList} from 'app/screens';
 import {opacityColor} from 'utils/items';
 
-function Shop({
-  item,
-  navigation,
-}: {
+interface IShopProps {
   item: OfferItemType;
-  navigation: NativeStackNavigationProp<HomeStackList>;
-}) {
+  navigation: NativeStackNavigationProp<HomeStackList, 'Shop'>;
+}
+
+function Shop(props: IShopProps) {
+  const {item, navigation} = props;
   return (
     <TouchableOpacity
       style={styles.main}

@@ -4,7 +4,12 @@ import FastImage from 'react-native-fast-image';
 import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {Labels} from 'constants/labels';
 
-const ProfileHeader = ({navigate}: {navigate: () => void}) => {
+interface IProfileHeaderProps {
+  navigate: () => void;
+}
+
+const ProfileHeader = (props: IProfileHeaderProps) => {
+  const {navigate} = props;
   return (
     <View style={styles.main}>
       <FastImage style={styles.img} source={{uri: ''}} />

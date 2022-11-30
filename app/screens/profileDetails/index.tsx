@@ -4,12 +4,12 @@ import Header from 'app/components/header';
 import {RouteProp} from '@react-navigation/native';
 import {ProfileStackList} from 'app/screens';
 
-const ProfileDetails = ({
-  route,
-}: {
+interface IProfileDetails {
   route: RouteProp<ProfileStackList, 'ProfileDetails'>;
-}) => {
-  const {title} = route.params;
+}
+
+const ProfileDetails = (props: IProfileDetails) => {
+  const {title} = props.route.params;
 
   return (
     <View>

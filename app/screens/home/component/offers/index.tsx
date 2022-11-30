@@ -52,7 +52,12 @@ const items = [
   },
 ];
 
-const Offers = ({item}: {item: OfferItemType}) => {
+interface IOffersProps {
+  item: OfferItemType;
+}
+
+const Offers = (props: IOffersProps) => {
+  const {item} = props;
   const navigation = useNavigation<NativeStackNavigationProp<HomeStackList>>();
 
   return (

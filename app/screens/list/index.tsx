@@ -16,8 +16,14 @@ const data = [
   {id: '7', name: 'Shangrila', isCertified: false},
 ];
 
-const OffersList = ({route}: {route: RouteProp<HomeStackList, 'List'>}) => {
-  const navigation = useNavigation<NativeStackNavigationProp<HomeStackList>>();
+interface IOffersListProps {
+  route: RouteProp<HomeStackList, 'List'>;
+}
+
+const OffersList = (props: IOffersListProps) => {
+  const {route} = props;
+  const navigation =
+    useNavigation<NativeStackNavigationProp<HomeStackList, 'Shop'>>();
 
   const renderItem = useCallback(
     ({item}: {item: any}) => <Shop item={item} navigation={navigation} />,

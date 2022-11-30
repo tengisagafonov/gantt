@@ -5,7 +5,12 @@ import {Colors, fontWeight, spacing} from 'config/Theme';
 import {priceSeparator} from 'utils/items';
 import {OfferItemType} from 'app/types';
 
-export const OfferItem = ({item}: {item: OfferItemType}) => {
+interface IOfferItemProps {
+  item: OfferItemType;
+}
+
+export const OfferItem = (props: IOfferItemProps) => {
+  const {item} = props;
   return (
     <View style={styles.main}>
       <FastImage source={{uri: item.src}} style={styles.img}>

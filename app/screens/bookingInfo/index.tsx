@@ -22,12 +22,12 @@ const orderProfile = {
   code: '#5840983',
 };
 
-const BookingInfo = ({
-  route,
-}: {
+interface IBookingInfoProps {
   route: RouteProp<BookingStackList, 'BookingInfo'>;
-}) => {
-  const {title, status} = route.params;
+}
+
+const BookingInfo = (props: IBookingInfoProps) => {
+  const {title, status} = props.route.params;
 
   return (
     <View style={styles.main}>
