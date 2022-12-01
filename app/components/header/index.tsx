@@ -11,14 +11,18 @@ import {Colors, fontSize, fontWeight, spacing} from 'config/Theme';
 import {CallIcon, ChevronIcon} from 'assets/icons';
 import {opacityColor} from 'utils/items';
 
-const Header = ({title = '', phone}: {title?: string; phone?: string}) => {
+interface IHeaderProps {
+  title?: string;
+  phone?: string;
+}
+
+const Header = (props: IHeaderProps) => {
   const navigation = useNavigation();
+  const {title, phone} = props;
   return (
     <SafeAreaView style={styles.header}>
       <View style={styles.row}>
-        <TouchableOpacity
-          style={styles.back}
-          onPress={() => navigation.goBack()}>
+        <TouchableOpacity style={styles.back} onPress={navigation.goBack}>
           <ChevronIcon />
         </TouchableOpacity>
         <Text style={styles.title}>{title}</Text>
