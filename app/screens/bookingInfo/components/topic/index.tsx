@@ -7,13 +7,14 @@ import {GeneralInfo, Labels} from 'constants/labels';
 import React from 'react';
 import {styles, statusText, status} from './styles';
 
-const Topic = ({
-  orderProfile,
-  bookingStatus,
-}: {
+interface ITopicProps {
   orderProfile: any;
   bookingStatus: Status;
-}) => {
+}
+
+const Topic = (props: ITopicProps) => {
+  const {orderProfile, bookingStatus} = props;
+
   return (
     <View style={styles.profile}>
       <View style={styles.services}>
