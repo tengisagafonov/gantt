@@ -1,5 +1,13 @@
 import React from 'react';
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+} from 'react-native';
 import Header from 'app/components/header';
 import FastImage from 'react-native-fast-image';
 import {Labels} from 'constants/labels';
@@ -23,24 +31,28 @@ const FormItem = (props: IFormItemProps) => {
 
 const EditProfile = () => {
   return (
-    <View style={styles.general}>
+    <KeyboardAvoidingView
+      style={styles.general}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <Header title={Labels['Edit Profile']} />
-      <View style={styles.main}>
-        <FastImage style={styles.img} source={{uri: ''}} />
-        <TouchableOpacity style={styles.add}>
-          <AddPhoto />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.form}>
-        <FormItem label={'Name'} />
-        <FormItem label={'Email'} />
-        <FormItem label={'Mobile number'} />
-        <FormItem label={'Password'} isPassword />
-      </View>
+      <ScrollView>
+        <View style={styles.main}>
+          <FastImage style={styles.img} source={{uri: ''}} />
+          <TouchableOpacity style={styles.add}>
+            <AddPhoto />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.form}>
+          <FormItem label={'Name'} />
+          <FormItem label={'Email'} />
+          <FormItem label={'Mobile number'} />
+          <FormItem label={'Password'} isPassword />
+        </View>
+      </ScrollView>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.text}>{Labels.Save}</Text>
       </TouchableOpacity>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
