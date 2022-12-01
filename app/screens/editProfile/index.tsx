@@ -6,13 +6,13 @@ import {Labels} from 'constants/labels';
 import {AddPhoto} from 'assets/icons';
 import {styles} from './styles';
 
-const FormItem = ({
-  label,
-  isPassword,
-}: {
+interface IFormItemProps {
   label: string;
   isPassword?: boolean;
-}) => {
+}
+
+const FormItem = (props: IFormItemProps) => {
+  const {label, isPassword} = props;
   return (
     <View>
       <Text style={styles.label}>{label}</Text>
