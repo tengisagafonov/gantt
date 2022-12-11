@@ -21,3 +21,16 @@ export {
   CallIcon,
   AddPhoto,
 };
+
+export const Icon = {
+  ProfileIcon,
+  BookingIcon,
+  HomeIcon,
+  ChevronIcon,
+  ChevronDoubleIcon,
+  LocationIcon,
+  Rating,
+  MedalIcon,
+  CallIcon,
+  AddPhoto,
+};
