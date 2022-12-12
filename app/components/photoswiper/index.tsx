@@ -52,7 +52,17 @@ export const PhotoSwiper = () => {
 };
 
 const styles = StyleSheet.create({
-  main: {borderBottomWidth: 1, borderColor: Colors.border},
+  main: {
+    shadowColor: Colors.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+  },
   indicator: {
     alignItems: 'center',
     flexDirection: 'row',
