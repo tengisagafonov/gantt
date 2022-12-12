@@ -14,7 +14,7 @@ const ShopInfo = (props: IShopInfoProps) => {
   return (
     <View style={styles.main}>
       <Header title={title} />
-      <ScrollView>
+      <ScrollView stickyHeaderIndices={[0]}>
         <PhotoSwiper />
       </ScrollView>
     </View>
