@@ -23,6 +23,7 @@ const TabItem: FC<ITabItemProps> = props => {
     <View style={styles.tab}>
       {routes.map((i: {title: string; key: string}, idx: number) => (
         <TouchableOpacity
+          key={idx}
           onPressIn={() => jumpTo(i.key)}
           style={itemStyle(index === idx)}>
           <Text style={text(index === idx)}>{i.title}</Text>
@@ -33,7 +34,7 @@ const TabItem: FC<ITabItemProps> = props => {
 };
 
 const styles = StyleSheet.create({
-  tab: {flexDirection: 'row', flex: 1, justifyContent: 'space-around'},
+  tab: {flexDirection: 'row', justifyContent: 'space-around'},
 });
 
 const itemStyle = (active: boolean) =>

@@ -54,6 +54,7 @@ export const PhotoSwiper = () => {
 
 const styles = StyleSheet.create({
   main: {
+    height: 200,
     shadowColor: Colors.black,
     shadowOffset: {
       width: 0,
