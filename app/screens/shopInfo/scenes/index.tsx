@@ -18,7 +18,7 @@ const Tabs = () => {
       onIndexChange={idx => setIndex(idx)}
       navigationState={{index, routes}}
       renderScene={renderScene}
-      renderTabBar={props => <TabItem {...props} />}
+      renderTabBar={TabItem}
     />
   );
 };

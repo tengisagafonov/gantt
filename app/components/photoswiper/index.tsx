@@ -45,7 +45,10 @@ export const PhotoSwiper = () => {
       />
       <View style={styles.indicator}>
         {data.map((i, idx) => (
-          <View style={[styles.inactive, idx === page && styles.active]} />
+          <View
+            key={idx}
+            style={[styles.inactive, idx === page && styles.active]}
+          />
         ))}
       </View>
     </View>
