@@ -11,7 +11,7 @@ import FastImage from 'react-native-fast-image';
 
 const defaultImg = require('../../assets/images/default.png');
 
-const data = [{}, {}, {}, {}, {}];
+const data = [{url: ''}, {url: ''}, {url: ''}, {url: ''}, {url: ''}];
 
 const PhotoItem = () => {
   return (
@@ -37,6 +37,7 @@ export const PhotoSwiper = () => {
         horizontal={true}
         pagingEnabled={true}
         onScroll={scrollEnd}
+        keyExtractor={(item, idx) => item?.url + idx}
         showsHorizontalScrollIndicator={false}
         snapToInterval={screenWidth}
         data={data}
