@@ -60,7 +60,7 @@ const Tabs = () => {
   const {scrollY, index, setIndex, renderScene} = useTabs();
 
   return (
-    <Animated.View style={[styles.main, anim(scrollY)]}>
+    <Animated.View style={[styles.main, index === 0 && anim(scrollY)]}>
       <TabView
         style={styles.tab}
         onIndexChange={idx => setIndex(idx)}
@@ -81,7 +81,7 @@ const anim = (scrollY: Animated.Value) => ({
   transform: [
     {
       translateY: scrollY.interpolate({
-        inputRange: [0, 400],
+        inputRange: [0, 200],
         outputRange: [200, 0],
         extrapolate: 'clamp',
       }),
