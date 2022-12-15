@@ -25,6 +25,7 @@ export enum fontWeight {
 
 export const Colors = {
   white: '#fff',
+  bg: '#f4f4f4',
   black: '#000',
   buttonInactive: '#EDEDED',
   buttonActiveBlue: '#005DAC',

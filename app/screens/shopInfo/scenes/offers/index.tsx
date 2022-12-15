@@ -1,9 +1,9 @@
 import React from 'react';
-import {ScrollView, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 const Offers = () => {
   return (
-    <ScrollView style={styles.main}>
+    <View style={styles.main}>
       <Text style={styles.item}>Offers dsldasjhdlkj</Text>
       <Text style={styles.item}>Offers dsldasjhdlkj</Text>
       <Text style={styles.item}>Offers dsldasjhdlkj</Text>
@@ -40,7 +40,7 @@ const Offers = () => {
       <Text style={styles.item}>Offers dsldasjhdlkj</Text>
       <Text style={styles.item}>Offers dsldasjhdlkj</Text>
       <Text style={styles.item}>Offers dsldasjhdlkj</Text>
-    </ScrollView>
+    </View>
   );
 };
 

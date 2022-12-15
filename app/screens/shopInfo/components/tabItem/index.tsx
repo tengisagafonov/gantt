@@ -7,10 +7,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {
-  NavigationState,
-  SceneRendererProps,
-} from 'react-native-tab-view/lib/typescript/src/types';
+import {NavigationState, SceneRendererProps} from 'react-native-tab-view';
 import {Colors, fontWeight, spacing} from 'config/Theme';
 
 type ITabItemProps = SceneRendererProps & {

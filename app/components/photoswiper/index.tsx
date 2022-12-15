@@ -5,6 +5,7 @@ import {
   StyleSheet,
   NativeSyntheticEvent,
   NativeScrollEvent,
+  ViewStyle,
 } from 'react-native';
 import {Colors, screenWidth, spacing} from 'config/Theme';
 import FastImage from 'react-native-fast-image';
@@ -12,6 +13,10 @@ import FastImage from 'react-native-fast-image';
 const defaultImg = require('../../assets/images/default.png');
 
 const data = [{url: ''}, {url: ''}, {url: ''}, {url: ''}, {url: ''}];
+
+interface IPhotoSwiper {
+  style?: ViewStyle;
+}
 
 const PhotoItem = () => {
   return (
@@ -23,7 +28,7 @@ const PhotoItem = () => {
   );
 };
 
-export const PhotoSwiper = () => {
+export const PhotoSwiper: React.FC<IPhotoSwiper> = ({style}) => {
   const [page, setPage] = useState(0);
 
   const scrollEnd = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -32,7 +37,7 @@ export const PhotoSwiper = () => {
   };
 
   return (
-    <View style={styles.main}>
+    <View style={[styles.main, style]}>
       <FlatList
         horizontal={true}
         pagingEnabled={true}

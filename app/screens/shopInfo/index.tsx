@@ -15,15 +15,17 @@ const ShopInfo = (props: IShopInfoProps) => {
   return (
     <View style={styles.main}>
       <Header title={title} />
-      <PhotoSwiper key={'photo'} />
-      <Tabs key={'tabs'} />
+      <View style={styles.main}>
+        <PhotoSwiper key={'photo'} style={styles.swipe} />
+        <Tabs key={'tabs'} />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   main: {flex: 1},
-  scroll: {flexGrow: 1},
+  swipe: {position: 'absolute', top: 0},
 });
 
 export default ShopInfo;
