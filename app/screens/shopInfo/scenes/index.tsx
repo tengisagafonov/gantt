@@ -8,6 +8,8 @@ import {Colors} from 'config/Theme';
 import Review from './review';
 import Details from './details';
 
+const headerHeight = 200;
+
 const useTabs = (height: number) => {
   const [index, setIndex] = React.useState(0);
   const scrollY = useRef(new Animated.Value(0)).current;
@@ -71,6 +73,7 @@ const Tabs = ({
 }) => {
   const [height, setHeight] = useState<number>(0);
   const {scrollY, index, setIndex, renderScene} = useTabs(height);
+
   return (
     <View style={[styles.main]}>
       <TabView
@@ -100,8 +103,8 @@ const anim = (scrollY: Animated.Value) =>
     transform: [
       {
         translateY: scrollY.interpolate({
-          inputRange: [0, 200],
-          outputRange: [0, -200],
+          inputRange: [0, headerHeight],
+          outputRange: [0, -headerHeight],
           extrapolate: 'clamp',
         }),
       },

@@ -1,3 +1,7 @@
+interface ILabels {
+  [key: string]: string | undefined;
+}
+
 export const Labels = {
   Active: 'Active',
   Success: 'Success',
@@ -10,7 +14,10 @@ export const Labels = {
   'Cancellation Policy': 'Cancellation Policy',
   'Give Feedback': 'Give Feedback',
   'Privacy Policy': 'Privacy Policy',
-};
+  Offers: 'Offers',
+  Review: 'Review',
+  Details: 'Details',
+} as ILabels;
 
 export const GeneralInfo = {
   'Cancellation Policy':

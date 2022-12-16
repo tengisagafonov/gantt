@@ -15,9 +15,7 @@ const ShopInfo = (props: IShopInfoProps) => {
   return (
     <View style={styles.main}>
       <Header title={title} />
-      <View style={styles.main}>
-        <Tabs renderHeaderComponent={<PhotoSwiper />} />
-      </View>
+      <Tabs renderHeaderComponent={<PhotoSwiper />} />
     </View>
   );
 };
