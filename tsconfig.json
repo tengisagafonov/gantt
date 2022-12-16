@@ -23,6 +23,7 @@
       "utils/*" : ["app/utils/*/index" , "app/utils/*"]
     },
     "noEmit": true,
+    "noImplicitAny": false,
     "resolveJsonModule": true,
     "target": "esnext",
     "types": ["jest"],

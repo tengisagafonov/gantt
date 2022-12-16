@@ -11,6 +11,7 @@ export enum spacing {
 }
 
 export enum fontSize {
+  smaller = 10,
   small = 12,
   medium = 14,
   large = 16,
