@@ -16,8 +16,7 @@ const ShopInfo = (props: IShopInfoProps) => {
     <View style={styles.main}>
       <Header title={title} />
       <View style={styles.main}>
-        <PhotoSwiper key={'photo'} style={styles.swipe} />
-        <Tabs key={'tabs'} />
+        <Tabs renderHeaderComponent={<PhotoSwiper />} />
       </View>
     </View>
   );
@@ -25,7 +24,6 @@ const ShopInfo = (props: IShopInfoProps) => {
 
 const styles = StyleSheet.create({
   main: {flex: 1},
-  swipe: {position: 'absolute', top: 0},
 });
 
 export default ShopInfo;

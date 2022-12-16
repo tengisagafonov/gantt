@@ -9,6 +9,16 @@ const offers = [
   {name: "Man's regular haircut"},
   {name: "Man's regular haircut"},
   {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
+  {name: "Man's regular haircut"},
   {name: 'Wtf'},
 ];
 
@@ -34,10 +44,6 @@ const Offers = () => {
 };
 
 const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    marginBottom: spacing.huge,
-  },
   row: {flexDirection: 'row'},
   info: {alignItems: 'flex-end', marginRight: spacing.medium},
   item: {
@@ -47,7 +53,7 @@ const styles = StyleSheet.create({
     borderColor: opacityColor(Colors.border, 0.2),
     justifyContent: 'space-between',
     padding: spacing.medium,
-    marginVertical: spacing.medium,
+    marginTop: spacing.medium,
   },
   book: {
     alignItems: 'center',

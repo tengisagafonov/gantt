@@ -4,14 +4,18 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
   ViewStyle,
 } from 'react-native';
-import {NavigationState, SceneRendererProps} from 'react-native-tab-view';
+import {
+  NavigationState,
+  SceneRendererProps,
+  Route,
+} from 'react-native-tab-view';
 import {Colors, fontWeight, spacing} from 'config/Theme';
 
 type ITabItemProps = SceneRendererProps & {
-  navigationState: NavigationState<{key: string; title: string}>;
+  navigationState: NavigationState<Route>;
+  scrollY: Animated.Value;
 };
 
 const getTranslateX = (
@@ -21,11 +25,11 @@ const getTranslateX = (
 
 const TabItem: FC<ITabItemProps> = props => {
   const {routes, index} = props.navigationState;
-  const {jumpTo, position, layout} = props;
+  const {jumpTo, position, layout, scrollY} = props;
 
   return (
-    <View style={styles.tab}>
-      {routes.map((i: {title: string; key: string}, idx: number) => (
+    <Animated.View style={[styles.tab, anim(scrollY)]}>
+      {routes.map((i: Route, idx: number) => (
         <TouchableOpacity
           key={idx}
           onPressIn={() => jumpTo(i.key)}
@@ -34,12 +38,16 @@ const TabItem: FC<ITabItemProps> = props => {
         </TouchableOpacity>
       ))}
       <Animated.View style={animated(position, layout.width / routes.length)} />
-    </View>
+    </Animated.View>
   );
 };
 
 const styles = StyleSheet.create({
-  tab: {flexDirection: 'row', justifyContent: 'space-around'},
+  tab: {
+    zIndex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
   itemStyle: {
     flex: 1,
     alignItems: 'center',
@@ -58,6 +66,18 @@ const animated = (position: Animated.Value, width: number) =>
     borderWidth: 1,
     transform: [{translateX: getTranslateX(position, width)}],
   } as Animated.AnimatedProps<ViewStyle>);
+
+const anim = (scrollY: Animated.Value) => ({
+  transform: [
+    {
+      translateY: scrollY.interpolate({
+        inputRange: [0, 200],
+        outputRange: [200, 0],
+        extrapolate: 'clamp',
+      }),
+    },
+  ],
+});
 
 const text = (active: boolean) =>
   ({

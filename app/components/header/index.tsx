@@ -38,6 +38,7 @@ const Header = (props: IHeaderProps) => {
 
 const styles = StyleSheet.create({
   header: {
+    zIndex: 2,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
