@@ -15,6 +15,7 @@ import Home from './home';
 import Profile from './profile';
 import EditProfile from './editProfile';
 import ProfileDetails from 'app/screens/profileDetails';
+import BookTime from 'app/screens/bookTime';
 
 export type RootStackParamList = {
   auth: undefined;
@@ -25,6 +26,7 @@ export type HomeStackList = {
   HomeRoot: undefined;
   List: {title: string};
   Shop: {title: string};
+  BookTime: undefined;
 };
 
 export type BookingStackList = {
@@ -79,6 +81,7 @@ const HomeNavigator = () => (
     <HomeStack.Screen name={'HomeRoot'} component={Home} />
     <HomeStack.Screen name={'List'} component={OffersList} />
     <HomeStack.Screen name={'Shop'} component={ShopInfo} />
+    <HomeStack.Screen name={'BookTime'} component={BookTime} />
   </HomeStack.Navigator>
 );
 

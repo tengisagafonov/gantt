@@ -7,6 +7,7 @@ import {OfferItemType} from 'app/types';
 import {NativeStackNavigationProp} from 'react-native-screens/native-stack';
 import {HomeStackList} from 'app/screens';
 import {opacityColor} from 'utils/items';
+import {screenWidth} from 'config/Theme';
 
 interface IShopProps {
   item: OfferItemType;
@@ -26,23 +27,25 @@ function Shop(props: IShopProps) {
           uri: 'https://climate.onep.go.th/wp-content/uploads/2020/01/default-image-600x338.png',
         }}
       />
-      <View>
-        <Text style={styles.title}> {item?.name}</Text>
-        <View style={[styles.row, styles.gap]}>
-          <Text> E-Sports</Text>
+      <View style={[styles.row, styles.spacing]}>
+        <View>
+          <Text style={styles.title}> {item?.name}</Text>
+          <View style={[styles.row, styles.gap]}>
+            <Text> E-Sports</Text>
+          </View>
+          <View style={styles.row}>
+            <LocationIcon style={styles.icon} color={Colors.red} />
+            <TouchableOpacity>
+              <Text style={[styles.text, styles.location]}>Bayngol dureg</Text>
+            </TouchableOpacity>
+            <Rating style={styles.icon} color={Colors.yellow} />
+            <Text style={styles.text}>4.5</Text>
+            <Text> (50+)</Text>
+          </View>
         </View>
-        <View style={styles.row}>
-          <LocationIcon style={styles.icon} color={Colors.red} />
-          <TouchableOpacity>
-            <Text style={[styles.text, styles.location]}> Bayngol dureg </Text>
-          </TouchableOpacity>
-          <Rating style={styles.icon} color={Colors.yellow} />
-          <Text style={styles.text}>4.5</Text>
-          <Text> (50+)</Text>
+        <View style={styles.chevron}>
+          <ChevronIcon color={Colors.white} />
         </View>
-      </View>
-      <View style={styles.chevron}>
-        <ChevronIcon color={Colors.white} />
       </View>
     </TouchableOpacity>
   );
@@ -51,19 +54,23 @@ function Shop(props: IShopProps) {
 const styles = StyleSheet.create({
   main: {
     backgroundColor: Colors.white,
-    flexDirection: 'row',
-    marginTop: spacing.tiny,
+    marginTop: spacing.medium,
     borderWidth: 1,
-    borderColor: Colors.buttonInactive,
+    borderRadius: 4,
+    borderColor: opacityColor(Colors.border, 0.4),
     alignItems: 'center',
-    padding: spacing.medium,
-    marginHorizontal: spacing.tiny,
+    marginHorizontal: spacing.medium,
   },
   badge: {position: 'absolute', top: 12, left: 8, zIndex: 2},
   gap: {marginVertical: spacing.tiny},
-  row: {flexDirection: 'row', alignItems: 'center'},
+  spacing: {padding: spacing.medium},
+  row: {flexDirection: 'row', alignItems: 'center', width: '100%'},
   title: {fontSize: fontSize.large, fontWeight: fontWeight.bold},
-  logo: {width: 60, height: 60, marginRight: spacing.medium},
+  logo: {
+    width: screenWidth - spacing.medium * 2 - 2,
+    borderRadius: 4,
+    height: screenWidth * 0.4,
+  },
   location: {color: Colors.buttonActiveBlue, textDecorationLine: 'underline'},
   icon: {transform: [{scale: 0.7}]},
   text: {fontWeight: fontWeight.bold},

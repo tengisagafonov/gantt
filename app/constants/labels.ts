@@ -1,5 +1,14 @@
+interface IWeekday {
+  Monday: string;
+  Tuesday: string;
+  Wednesday: string;
+  Thursday: string;
+  Saturday: string;
+  Sunday: string;
+}
+
 interface ILabels {
-  [key: string]: string | undefined;
+  [key: string]: string;
 }
 
 export const Labels = {
@@ -17,7 +26,20 @@ export const Labels = {
   Offers: 'Offers',
   Review: 'Review',
   Details: 'Details',
+  'About Us': 'About Us',
+  'Time Table': 'Time Table',
+  Contacts: 'Contacts',
+  Call: 'Call',
 } as ILabels;
+
+export const WeekDays = {
+  Monday: 'Monday',
+  Tuesday: 'Tuesday',
+  Wednesday: 'Wednesday',
+  Thursday: 'Thursday',
+  Saturday: 'Saturday',
+  Sunday: 'Sunday',
+} as IWeekday;
 
 export const GeneralInfo = {
   'Cancellation Policy':
